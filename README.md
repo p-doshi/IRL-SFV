@@ -1,6 +1,6 @@
 # Successor Feature Matching (SFM) with Intrinsic Reward Bonus
 
-> **This fork** extends [Jain et al. (2025)](https://openreview.net/forum?id=LvRQgsvd5V)'s Successor Feature Matching (SFM) algorithm with an *intrinsic reward* derived from the variance of successor features. The goal is to encourage exploration in under-visited state regions.
+> **This fork** extends [Kumar et al. (2025)](https://openreview.net/forum?id=LvRQgsvd5V)'s Successor Feature Matching (SFM) algorithm with an *intrinsic reward* derived from the variance of successor features. The goal is to encourage exploration in under-visited state regions.
 
 ## 🔍 Key Contributions
 

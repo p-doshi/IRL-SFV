@@ -713,7 +713,12 @@ def evaluate_agent(
 if __name__ == "__main__":
     
     cfg = tyro.cli(Args)
-    
+    def compute_intrinsic_reward_jax(state, next_state, sf_model):
+        sf_current = sf_model(state)        # shape: [feature_dim]
+        sf_next = sf_model(next_state)      # shape: [feature_dim]
+        return jnp.linalg.norm(sf_next - sf_current)
+
+
     # General setup
     np.random.seed(cfg.seed)
 
@@ -740,7 +745,7 @@ if __name__ == "__main__":
 
     # Set up environment
     env, eval_env = DMCEnv(cfg.env), DMCEnv(cfg.env)
-    normalization_max, normalization_min = 1000, 0
+    normalization_max, normalization_min, beta = 1000, 0, 0.1
 
     state_size, action_size = env.observation_space.shape[0], env.action_space.shape[0]
 
@@ -796,6 +801,10 @@ if __name__ == "__main__":
         ep_timesteps += 1
         
         next_state, reward, terminal, truncation = env.step(action)
+        intrinsic_reward = compute_intrinsic_reward_jax(state, next_state, agent.sf_model)  # You define this
+
+        # Combine with extrinsic reward
+        reward = reward + beta * intrinsic_reward
         t += 1
         done = terminal or truncation
         train_return += reward

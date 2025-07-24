@@ -4,8 +4,11 @@
 [metadata]
 groups = ["default"]
 strategy = ["cross_platform", "inherit_metadata"]
-lock_version = "4.4.1"
-content_hash = "sha256:58f18d0b925c013a221ed115bda9ded3ca476f713f1f4a0a12f50734cf7aafce"
+lock_version = "4.5.0"
+content_hash = "sha256:9dec8cc037552f735c2729a144e8846040be2ce7bd1e74d7fe29eb111375d170"
+
+[[metadata.targets]]
+requires_python = "==3.10.*"
 
 [[package]]
 name = "absl-py"
