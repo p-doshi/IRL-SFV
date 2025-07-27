@@ -578,6 +578,21 @@ class SFM_TD7:
 
         self._update_checkpoint = jax.jit(_update_checkpoint)
 
+        def sf_model(state: jnp.ndarray) -> jnp.ndarray:
+            if state.ndim == 1:
+                state = state[None, :]
+            
+            zs = self.encoder.apply_fn(self.encoder.params, state, method='zs')
+            a = self.actor.apply_fn(self.actor.params, state, zs)
+            zsa = self.encoder.apply_fn(self.encoder.params, zs, a, method='zsa')
+            psi1, psi2 = self.psi.apply_fn(self.psi.params, state, a, zs, zsa)
+            
+            # return psi1 
+            return psi1[0]  # remove batch dim for single input
+
+        self.sf_model = sf_model
+
+
     def update_checkpoint(self):
         self.encoder, self.actor = self._update_checkpoint(self.encoder, self.actor)
 
