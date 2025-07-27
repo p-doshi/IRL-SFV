@@ -801,7 +801,7 @@ if __name__ == "__main__":
         ep_timesteps += 1
         
         next_state, reward, terminal, truncation = env.step(action)
-        intrinsic_reward = compute_intrinsic_reward_jax(state, next_state, agent.sf_model)  # You define this
+        intrinsic_reward = compute_intrinsic_reward_jax(state, next_state, agent.sf_model)  # Addition
 
         # Combine with extrinsic reward
         reward = reward + beta * intrinsic_reward
