@@ -5,18 +5,13 @@
 ## 🔍 Key Contributions
 
 - Added an **intrinsic reward** term:  
-  \[
-  r = r_{\text{env}} + \alpha \cdot \text{Var}(\psi(s))
-  \]  
-  where \(\psi(s)\) is the successor feature for state \(s\), and \(\alpha\) is a tunable coefficient.
+  r = r_env + α · Var(ψ(s))
+
+  where ψ(s) is the successor feature for state s, and  α  is a tunable coefficient.
 
 - Modified agents:
   - `sfm_td7.py` — main logic for training with intrinsic rewards.
-  - `sfm_utils.py` (if needed) — successor feature tracking and variance computation.
-
-- New CLI flag:
-  ```bash
-  --use_intrinsic_reward    # Enables variance-based bonus
+  - `sfm_td7_org.py` — main logic of SFM
 
 
 This work proposes Successor Feature Matching (SFM) a state-only non-adversarial algorithm for matching expected features between the agent and the expert. Specifically, SFM derives a feature-matching imitation policy by __direct policy optimization__ via policy gradient descent, and __learns the state-only base features__ simultaneously during training. This reduction to RL allows using any off-the-shelf RL policy optimizer-- as we conduct experiments with backbones analgous to TD3 and TD7. 
