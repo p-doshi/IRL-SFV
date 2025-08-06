@@ -1,0 +1,104 @@
+{
+    "os": "Linux-6.8.0-60-generic-x86_64-with-glibc2.39",
+    "python": "3.10.18",
+    "heartbeatAt": "2025-07-31T18:44:37.982876",
+    "startedAt": "2025-07-31T18:44:37.094136",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--env",
+        "cheetah_run",
+        "--seed",
+        "1"
+    ],
+    "state": "running",
+    "program": "-m agents.sfm_td7_1",
+    "codePathLocal": null,
+    "git": {
+        "remote": "https://github.com/p-doshi/IRL-SFV.git",
+        "commit": "01ca79de91476248028262983108fa1011367ad9"
+    },
+    "email": "parthdoshi135@gmail.com",
+    "root": "/home/parth/sfm-irl/IRL-SFV",
+    "host": "bigdata8",
+    "username": "parth",
+    "executable": "/home/parth/sfm-irl/IRL-SFV/.venv/bin/python",
+    "cpu_count": 6,
+    "cpu_count_logical": 12,
+    "cpu_freq": {
+        "current": 3999.9996666666666,
+        "min": 800.0,
+        "max": 4700.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 4000.002,
+            "min": 800.0,
+            "max": 4700.0
+        },
+        {
+            "current": 4000.014,
+            "min": 800.0,
+            "max": 4700.0
+        },
+        {
+            "current": 3999.986,
+            "min": 800.0,
+            "max": 4700.0
+        },
+        {
+            "current": 3999.961,
+            "min": 800.0,
+            "max": 4700.0
+        },
+        {
+            "current": 3999.997,
+            "min": 800.0,
+            "max": 4700.0
+        },
+        {
+            "current": 4000.0,
+            "min": 800.0,
+            "max": 4700.0
+        },
+        {
+            "current": 4000.003,
+            "min": 800.0,
+            "max": 4700.0
+        },
+        {
+            "current": 4000.001,
+            "min": 800.0,
+            "max": 4700.0
+        },
+        {
+            "current": 4000.005,
+            "min": 800.0,
+            "max": 4700.0
+        },
+        {
+            "current": 4000.003,
+            "min": 800.0,
+            "max": 4700.0
+        },
+        {
+            "current": 3999.984,
+            "min": 800.0,
+            "max": 4700.0
+        },
+        {
+            "current": 3999.997,
+            "min": 800.0,
+            "max": 4700.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 467.8897895812988,
+            "used": 372.34707260131836
+        }
+    },
+    "memory": {
+        "total": 31.275066375732422
+    }
+}

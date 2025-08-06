@@ -1,0 +1,116 @@
+diff --git a/.pdm-python b/.pdm-python
+index 31cf5e6..d1cef96 100644
+--- a/.pdm-python
++++ b/.pdm-python
+@@ -1 +1 @@
+-/mnt/c/Users/Parth/4250/IRL-SFV/.venv/bin/python
+\ No newline at end of file
++/home/parth/sfm-irl/IRL-SFV/.venv/bin/python
+\ No newline at end of file
+diff --git a/.python-version b/.python-version
+index c8cfe39..2419ad5 100644
+--- a/.python-version
++++ b/.python-version
+@@ -1 +1 @@
+-3.10
++3.11.9
+diff --git a/agents/__pycache__/__init__.cpython-310.pyc b/agents/__pycache__/__init__.cpython-310.pyc
+index 165ebd1..463906c 100644
+Binary files a/agents/__pycache__/__init__.cpython-310.pyc and b/agents/__pycache__/__init__.cpython-310.pyc differ
+diff --git a/agents/__pycache__/sfm_td7_org.cpython-310.pyc b/agents/__pycache__/sfm_td7_org.cpython-310.pyc
+index 2490e2f..aae2bd6 100644
+Binary files a/agents/__pycache__/sfm_td7_org.cpython-310.pyc and b/agents/__pycache__/sfm_td7_org.cpython-310.pyc differ
+diff --git a/agents/sfm_td7_org.py b/agents/sfm_td7_org.py
+index de35cf4..ea2b50f 100644
+--- a/agents/sfm_td7_org.py
++++ b/agents/sfm_td7_org.py
+@@ -29,11 +29,11 @@ class Args:
+     """the name of this experiment"""
+     seed: int = 1
+     """seed of the experiment"""
+-    track: bool = False
++    track: bool = True
+     """if toggled, this experiment will be tracked with Weights and Biases"""
+-    wandb_project: str = "SFM"
++    wandb_project: str = "IRL-SFV"
+     """the wandb's project name"""
+-    wandb_entity: str = None
++    wandb_entity: str = "pdoshi-dal"
+     """the entity (team) of wandb's project"""
+     wandb_suffix: str = ""
+     """Experiment name for wandb"""
+@@ -754,7 +754,7 @@ if __name__ == "__main__":
+                 cfg.wandb_suffix
+             ),
+             name=str(cfg.seed),
+-            monitor_gym=True,
++            # monitor_gym=True,
+             save_code=True,
+         )
+ 
+diff --git a/common/__pycache__/__init__.cpython-310.pyc b/common/__pycache__/__init__.cpython-310.pyc
+index 4ca8888..7fe75f3 100644
+Binary files a/common/__pycache__/__init__.cpython-310.pyc and b/common/__pycache__/__init__.cpython-310.pyc differ
+diff --git a/common/__pycache__/base_features.cpython-310.pyc b/common/__pycache__/base_features.cpython-310.pyc
+index de7bafb..d22e5de 100644
+Binary files a/common/__pycache__/base_features.cpython-310.pyc and b/common/__pycache__/base_features.cpython-310.pyc differ
+diff --git a/common/__pycache__/buffer.cpython-310.pyc b/common/__pycache__/buffer.cpython-310.pyc
+index 9f1e514..c7bc42c 100644
+Binary files a/common/__pycache__/buffer.cpython-310.pyc and b/common/__pycache__/buffer.cpython-310.pyc differ
+diff --git a/common/__pycache__/utils.cpython-310.pyc b/common/__pycache__/utils.cpython-310.pyc
+index 76f4cc9..729a0ce 100644
+Binary files a/common/__pycache__/utils.cpython-310.pyc and b/common/__pycache__/utils.cpython-310.pyc differ
+diff --git a/envs/__pycache__/__init__.cpython-310.pyc b/envs/__pycache__/__init__.cpython-310.pyc
+index 8260952..db79e69 100644
+Binary files a/envs/__pycache__/__init__.cpython-310.pyc and b/envs/__pycache__/__init__.cpython-310.pyc differ
+diff --git a/envs/__pycache__/dmc.cpython-310.pyc b/envs/__pycache__/dmc.cpython-310.pyc
+index 0eadc9a..0ccbdde 100644
+Binary files a/envs/__pycache__/dmc.cpython-310.pyc and b/envs/__pycache__/dmc.cpython-310.pyc differ
+diff --git a/envs/__pycache__/environments.cpython-310.pyc b/envs/__pycache__/environments.cpython-310.pyc
+index 9345d79..2a3f689 100644
+Binary files a/envs/__pycache__/environments.cpython-310.pyc and b/envs/__pycache__/environments.cpython-310.pyc differ
+diff --git a/envs/custom_dmc_tasks/__pycache__/__init__.cpython-310.pyc b/envs/custom_dmc_tasks/__pycache__/__init__.cpython-310.pyc
+index 26bd7bb..4a8febb 100644
+Binary files a/envs/custom_dmc_tasks/__pycache__/__init__.cpython-310.pyc and b/envs/custom_dmc_tasks/__pycache__/__init__.cpython-310.pyc differ
+diff --git a/envs/custom_dmc_tasks/__pycache__/cheetah.cpython-310.pyc b/envs/custom_dmc_tasks/__pycache__/cheetah.cpython-310.pyc
+index 3c1ffca..276636d 100644
+Binary files a/envs/custom_dmc_tasks/__pycache__/cheetah.cpython-310.pyc and b/envs/custom_dmc_tasks/__pycache__/cheetah.cpython-310.pyc differ
+diff --git a/envs/custom_dmc_tasks/__pycache__/hopper.cpython-310.pyc b/envs/custom_dmc_tasks/__pycache__/hopper.cpython-310.pyc
+index e6bff61..1535813 100644
+Binary files a/envs/custom_dmc_tasks/__pycache__/hopper.cpython-310.pyc and b/envs/custom_dmc_tasks/__pycache__/hopper.cpython-310.pyc differ
+diff --git a/envs/custom_dmc_tasks/__pycache__/jaco.cpython-310.pyc b/envs/custom_dmc_tasks/__pycache__/jaco.cpython-310.pyc
+index 166f000..79300f3 100644
+Binary files a/envs/custom_dmc_tasks/__pycache__/jaco.cpython-310.pyc and b/envs/custom_dmc_tasks/__pycache__/jaco.cpython-310.pyc differ
+diff --git a/envs/custom_dmc_tasks/__pycache__/point_mass_maze.cpython-310.pyc b/envs/custom_dmc_tasks/__pycache__/point_mass_maze.cpython-310.pyc
+index c3e0abc..7260802 100644
+Binary files a/envs/custom_dmc_tasks/__pycache__/point_mass_maze.cpython-310.pyc and b/envs/custom_dmc_tasks/__pycache__/point_mass_maze.cpython-310.pyc differ
+diff --git a/envs/custom_dmc_tasks/__pycache__/quadruped.cpython-310.pyc b/envs/custom_dmc_tasks/__pycache__/quadruped.cpython-310.pyc
+index 8dac704..7a2f8be 100644
+Binary files a/envs/custom_dmc_tasks/__pycache__/quadruped.cpython-310.pyc and b/envs/custom_dmc_tasks/__pycache__/quadruped.cpython-310.pyc differ
+diff --git a/envs/custom_dmc_tasks/__pycache__/walker.cpython-310.pyc b/envs/custom_dmc_tasks/__pycache__/walker.cpython-310.pyc
+index 2e7efb8..b40c534 100644
+Binary files a/envs/custom_dmc_tasks/__pycache__/walker.cpython-310.pyc and b/envs/custom_dmc_tasks/__pycache__/walker.cpython-310.pyc differ
+diff --git a/requirements.txt b/requirements.txt
+index 88829e0..41150e0 100644
+--- a/requirements.txt
++++ b/requirements.txt
+@@ -1,4 +1,4 @@
+-tensorflow-cpu==2.15.0
++tensorflow==2.15.0
+ tensorflow-probability==0.24.0
+ jax==0.4.23
+ jaxlib==0.4.23
+@@ -18,9 +18,9 @@ pandas==2.2.2
+ seaborn==0.13.2
+ frozendict==2.4.4
+ tyro==0.8.5
+-rliable @ git+https://github.com/google-research/rliable
+ opencv-python==4.10.0.84
+-setuptools==66
++setuptools>=66,<70
+ gym==0.23.0
+ sbx-rl==0.17.0
+-shimmy[dm-control]==1.3.0
+\ No newline at end of file
++shimmy[dm-control]==1.3.0
++rliable @ git+https://github.com/google-research/rliable

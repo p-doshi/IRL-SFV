@@ -29,11 +29,11 @@ class Args:
     """the name of this experiment"""
     seed: int = 1
     """seed of the experiment"""
-    track: bool = False
+    track: bool = True
     """if toggled, this experiment will be tracked with Weights and Biases"""
-    wandb_project: str = "SFM"
+    wandb_project: str = "IRL-SFV"
     """the wandb's project name"""
-    wandb_entity: str = None
+    wandb_entity: str = "pdoshi-dal"
     """the entity (team) of wandb's project"""
     wandb_suffix: str = ""
     """Experiment name for wandb"""
@@ -754,7 +754,7 @@ if __name__ == "__main__":
                 cfg.wandb_suffix
             ),
             name=str(cfg.seed),
-            monitor_gym=True,
+            #monitor_gym=True,
             save_code=True,
         )
 
